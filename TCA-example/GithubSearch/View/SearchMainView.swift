@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CounterMainView: View {
+struct SearchMainView: View {
     @Binding var isPresentCounterView: Bool
 
     var body: some View {
@@ -20,6 +20,8 @@ struct CounterMainView: View {
                 }
                 .padding()
             }
+            
+            
         
             Spacer()
                 

@@ -12,12 +12,12 @@ struct ContentView: View {
 
     var body: some View {
         List {
-            Button("CounterView") {
+            Button("SearchMainView") {
                 isPresentCounterView.toggle()
             }
         }
         .fullScreenCover(isPresented: $isPresentCounterView) {
-            CounterMainView(isPresentCounterView: $isPresentCounterView)
+            SearchMainView(isPresentCounterView: $isPresentCounterView)
         }
     }
 }
