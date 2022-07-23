@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresentCounterView = false
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            Button("CounterView") {
+                isPresentCounterView.toggle()
+            }
+        }
+        .fullScreenCover(isPresented: $isPresentCounterView) {
+            CounterMainView(isPresentCounterView: $isPresentCounterView)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+
