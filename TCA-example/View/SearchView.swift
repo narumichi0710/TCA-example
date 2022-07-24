@@ -67,8 +67,59 @@ struct SearchView: View {
     let store: Store<State, Action>
     
     var body: some View {
-        WithViewStore(self.store) { viewStore in
-            // TODO: UI
+        WithViewStore(store) { viewStore in
+            NavigationView {
+                VStack {
+                    TextField("user name",
+                              text: viewStore.binding(
+                                get: \.searchQuery, send: Action.searchQueryChanged
+                              )
+                    )
+                        .onChange(of: viewStore.searchQuery) { _ in
+                            viewStore.send(.searchQueryChanged(viewStore.searchQuery))
+                        }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.asciiCapable)
+                        .padding()
+                    Spacer()
+                    if let items = viewStore.users?.items {
+                        List(items) { user in
+                            NavigationLink(destination: Text(":TODO")) {
+                                UserRow(user: user)
+                            }
+                        }
+                        .refreshable {
+                            viewStore.send(.searchQueryChanged(viewStore.searchQuery))
+                        }
+                    }
+                }
+                .navigationTitle("🔍Search Github User")
+            }
+        }
+    }
+}
+
+struct UserRow: View {
+    let user: Users.User
+    
+    var body: some View {
+        HStack {
+            if let avatarUrl = user.avatarUrl {
+                AsyncImage(url: URL(string: avatarUrl)) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .clipShape(Circle())
+                .frame(width: 50, height: 50)
+                .padding()
+            }
+            Spacer()
+            if let login = user.login {
+                Text(login)
+                    .padding()
+            }
+            Spacer()
         }
     }
 }

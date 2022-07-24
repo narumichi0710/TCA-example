@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
 
 @main
 struct TCA_exampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView(store: Store(
+                initialState: State(),
+                reducer: reducer.debug(),
+                environment: Environment(
+                    usersClient: UsersClient.live,
+                    mainQueue: .main
+                )
+            ))
         }
     }
 }
