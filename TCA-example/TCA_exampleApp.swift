@@ -15,7 +15,7 @@ struct TCA_exampleApp: App {
         WindowGroup {
             SearchView(store: Store(
                 initialState: State(),
-                reducer: reducer.debug(),
+                reducer: reducer,
                 environment: Environment(
                     usersClient: UsersClient.live,
                     mainQueue: .main
