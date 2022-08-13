@@ -11,59 +11,61 @@ import ComposableArchitecture
 
 struct RootView: View {
     let store: Store<AppStore.State, AppStore.Action>
-    @ObservedObject private var viewStore: ViewStore<AppStore.State, AppStore.Action>
-    
-    init(store: Store<AppStore.State, AppStore.Action>) {
-        self.store = store
-        viewStore = ViewStore(store)
-        
-        // ユーザー一覧の取得
-        viewStore.send(.users(.getContent))
-    }
     
     var body: some View {
-        GeometryReader { geo in
-            NavigationView {
-                VStack {
-                    // ログイン画面
-                    switch viewStore.selectedRootTab {
-                    case .users:
-                        // トップ画面
-                        UsersMainScreen(
-                            store: store.scope(
-                                state: \.usersState,
-                                action: AppStore.Action.users
+        WithViewStore(store) { viewStore in
+            GeometryReader { geo in
+                NavigationView {
+                    VStack {
+                        // ログイン画面
+                        switch viewStore.selectedRootTab {
+                        case .users:
+                            // トップ画面
+                            UsersMainScreen(
+                                store: store.scope(
+                                    state: \.usersState,
+                                    action: AppStore.Action.users
+                                )
                             )
-                        )
-                        
-                    case .search:
-                        // 検索画面
-                        SearchMainScreen(
-                            store: store.scope(
-                                state: \.usersState,
-                                action: AppStore.Action.users
+                        case .search:
+                            // 検索画面
+                            SearchMainScreen(
+                                store: store.scope(
+                                    state: \.usersState,
+                                    action: AppStore.Action.users
+                                )
                             )
-                        )
-                    case .myPage:
-                        // マイページ
-                        VStack {
-                            Spacer()
-                            Color.green
-                            Text("マイページ")
-                            Spacer()
+                        case .myPage:
+                            // マイページ
+                            VStack {
+                                Spacer()
+                                Color.green
+                                Text("マイページ")
+                                Spacer()
+                            }
+                            
                         }
-                        
+                        // タブバー
+                        tabBar(
+                            viewStore: viewStore,
+                            tabItemWidth: geo.size.width / CGFloat(AppStore.RootTabType.allCases.count)
+                        )
                     }
-                    // タブバー
-                    tabBar(tabItemWidth: geo.size.width / CGFloat(AppStore.RootTabType.allCases.count))
+                    .navigationBarHidden(true)
+                    .onAppear {
+                        // ユーザー一覧の取得
+                        viewStore.send(.users(.getContent))
+                    }
                 }
-                .navigationBarHidden(true)
             }
         }
     }
     
     /// タブ変更バー.
-    private func tabBar(tabItemWidth: CGFloat) -> some View {
+    private func tabBar(
+        viewStore: ViewStore<AppStore.State, AppStore.Action>,
+        tabItemWidth: CGFloat
+    ) -> some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 ForEach(AppStore.RootTabType.allCases, id: \.self) { type in

@@ -43,20 +43,11 @@ enum AppStore {
     /// アクションで2つ以上になる場合はReducerを分割する.
     static let coreReducer = Reducer<State, Action, Environment> { state, action, env in
         switch action {
-        case .appDelegate(_):
-            return .none
-        case .users(.changedFilterWord(let type)):
-            return .none
         case .changedRootTab(let type):
             // タブの更新処理
             state.selectedRootTab = type
             return .none
-        case .users(.response(_)):
-            return .none
-        case .users(.getContent):
-            return .none
-        case .users(.presentRepositories(_)):
-            return .none
+        default: return .none
         }
     }
     
@@ -73,7 +64,7 @@ enum AppStore {
         UsersStore.reducer.pullback(
             state: \State.usersState,
             action: /Action.users,
-            environment: { 
+            environment: {
                 .init(usersClient: $0.usersClient)
             }
         )
