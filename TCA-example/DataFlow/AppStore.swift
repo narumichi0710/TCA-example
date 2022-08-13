@@ -19,9 +19,7 @@ enum AppStore {
         var usersState = UsersStore.State()
     }
     
-    enum Action: BindableAction {
-        /// ルートなどのアクション
-        case binding(BindingAction<State>)
+    enum Action: Equatable {
         ///  push通知, スプラッシュ機能などのアクション
         case appDelegate(AppDelegateStore.Action)
         /// ルートタブ変更アクション
@@ -45,8 +43,6 @@ enum AppStore {
     /// アクションで2つ以上になる場合はReducerを分割する.
     static let coreReducer = Reducer<State, Action, Environment> { state, action, env in
         switch action {
-        case .binding(_):
-            return .none
         case .appDelegate(_):
             return .none
         case .users(.changedFilterWord(let type)):
