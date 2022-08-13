@@ -57,6 +57,7 @@ struct RootView: View {
                     // タブバー
                     tabBar(tabItemWidth: geo.size.width / CGFloat(AppStore.RootTabType.allCases.count))
                 }
+                .navigationBarHidden(true)
             }
         }
     }

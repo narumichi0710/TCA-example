@@ -13,7 +13,7 @@ import Combine
 /// ユーザー検索画面
 struct UsersMainScreen: View {
     let store: Store<UsersStore.State, UsersStore.Action>
-        
+    
     var body: some View {
         ZStack {
             WithViewStore(store) { viewStore in
@@ -35,7 +35,12 @@ struct UsersMainScreen: View {
             get: \.selectedUser.isSelected,
             send: UsersStore.Action.presentRepositories(nil)
         )){
-            RepositoriesMainScreen(user: viewStore.selectedUser.selectdItem)
+            RepositoriesMainScreen(
+                selectedUser: viewStore.binding(
+                    get: \.selectedUser,
+                    send: UsersStore.Action.presentRepositories(nil)
+                )
+            ).navigationBarHidden(true)
         }
     }
     
