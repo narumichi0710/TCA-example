@@ -27,6 +27,8 @@
 		528C739128A644B300B8E377 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C739028A644B300B8E377 /* RootView.swift */; };
 		528C739E28A650E300B8E377 /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C739D28A650E300B8E377 /* LoginMainView.swift */; };
 		528C73A328A7936800B8E377 /* SearchMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73A228A7936800B8E377 /* SearchMainScreen.swift */; };
+		528C73A928A7B80B00B8E377 /* RepositoriesMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73A828A7B80B00B8E377 /* RepositoriesMainScreen.swift */; };
+		528C73AF28A7C1E400B8E377 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		528C739028A644B300B8E377 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		528C739D28A650E300B8E377 /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
 		528C73A228A7936800B8E377 /* SearchMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainScreen.swift; sourceTree = "<group>"; };
+		528C73A828A7B80B00B8E377 /* RepositoriesMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesMainScreen.swift; sourceTree = "<group>"; };
+		528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		52528E50288BFCDE00C7472E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				528C73AD28A7C1AB00B8E377 /* Utils */,
+				528C73A728A7B7E400B8E377 /* Repositories */,
 				528C73A128A7935000B8E377 /* Search */,
 				528C739C28A650CB00B8E377 /* Auth */,
 				528C738528A63DF800B8E377 /* Users */,
@@ -227,6 +233,22 @@
 				528C73A228A7936800B8E377 /* SearchMainScreen.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		528C73A728A7B7E400B8E377 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				528C73A828A7B80B00B8E377 /* RepositoriesMainScreen.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		528C73AD28A7C1AB00B8E377 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,9 +396,11 @@
 				528C738D28A6401500B8E377 /* AppDelegateStore.swift in Sources */,
 				528C737E28A4CAEF00B8E377 /* UsersMainScreen.swift in Sources */,
 				528C738F28A6405400B8E377 /* AppStore.swift in Sources */,
+				528C73A928A7B80B00B8E377 /* RepositoriesMainScreen.swift in Sources */,
 				528C737828A3ED6E00B8E377 /* UserCell.swift in Sources */,
 				528C737C28A4B9BB00B8E377 /* Repositories.swift in Sources */,
 				528C73A328A7936800B8E377 /* SearchMainScreen.swift in Sources */,
+				528C73AF28A7C1E400B8E377 /* LoadingScreen.swift in Sources */,
 				52528E23288BF2F200C7472E /* TCA_exampleApp.swift in Sources */,
 				52528E58288D53F700C7472E /* APIClient.swift in Sources */,
 			);

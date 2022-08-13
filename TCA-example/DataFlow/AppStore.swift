@@ -35,6 +35,12 @@ enum AppStore {
         let usersClient: UsersClient
     }
     
+    /// ルートタブタイプ
+    enum RootTabType: String, CaseIterable {
+        case users
+        case search
+        case myPage
+    }
     /// アプリ全体で管理している状態の変更処理を行うためのReducer.
     /// アクションで2つ以上になる場合はReducerを分割する.
     static let coreReducer = Reducer<State, Action, Environment> { state, action, env in
@@ -52,6 +58,8 @@ enum AppStore {
         case .users(.response(_)):
             return .none
         case .users(.getContent):
+            return .none
+        case .users(.presentRepositories(_)):
             return .none
         }
     }

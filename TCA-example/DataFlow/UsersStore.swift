@@ -18,6 +18,8 @@ enum UsersStore {
         var filteredUsers: [User]? = nil
         /// 検索ワード
         var filteredWord: String = ""
+        /// 選択中のユーザー
+        var selectedUser: Selection = Selection<User>(nil)
     }
     
     enum Action: Equatable {
@@ -27,6 +29,8 @@ enum UsersStore {
         case changedFilterWord(String)
         /// ユーザー一覧取得アクション
         case getContent
+        /// リポジトリ画面遷移アクション
+        case presentRepositories(User?)
     }
     
     static let reducer = Reducer<State, Action, AppStore.Environment> { state, action, environment in
@@ -79,6 +83,32 @@ enum UsersStore {
                 )
             // レスポンスの値をActionに返却する
                 .catchToEffect(Action.response)
+        case .presentRepositories(let selectedUser):
+            // レポジトリ画面遷移処理.
+            if selectedUser == nil {
+                state.selectedUser = Selection<User>(nil)
+            } else {
+                state.selectedUser = Selection<User>(selectedUser)
+            }
+            return .none
         }
+    }
+}
+
+
+/// ナビゲーションの引数として利用するための構造体
+struct Selection<T>: Equatable {
+    /// isActiveフラグのBinding先として定義
+    var isSelected: Bool = false
+    /// 選択中のアイテム
+    var selectdItem: T?
+    
+    init(_ item: T?) {
+        isSelected = item != nil
+        selectdItem = item
+    }
+    
+    static func == (lhs: Selection<T>, rhs: Selection<T>) -> Bool {
+        return lhs.isSelected == rhs.isSelected
     }
 }
