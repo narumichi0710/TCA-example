@@ -9,21 +9,23 @@ import SwiftUI
 import ComposableArchitecture
 
 // MARK: Push通知, 起動後の処理を管理するためのStore
-
-struct AppDelegateState: Equatable {}
-
-enum AppDelegateAction {
-    case onLaunchFinish
-}
-
-struct AppDelegateEnvironment {}
-
-let appDelegateReducer = Reducer<AppDelegateState, AppDelegateAction, AppDelegateEnvironment>
-    .combine(
-    .init { _, action, environment in
-        switch action {
-        case .onLaunchFinish:
-            return .none
-        }
+enum AppDelegateStore {
+    
+    struct State: Equatable {}
+    
+    enum Action {
+        case onLaunchFinish
     }
-)
+    
+    struct Environment {}
+    
+    static let reducer = Reducer<State, Action, Environment>
+        .combine(
+            .init { _, action, environment in
+                switch action {
+                case .onLaunchFinish:
+                    return .none
+                }
+            }
+        )
+}

@@ -22,9 +22,9 @@ struct TCA_exampleApp: App {
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let store = Store(
-        initialState: AppState(),
-        reducer: appReducer,
-        environment: AppEnvironment(
+        initialState: AppStore.State(),
+        reducer: AppStore.reducer,
+        environment: AppStore.Environment(
             usersClient: .live
         )
     )

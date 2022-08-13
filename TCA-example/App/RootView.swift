@@ -17,15 +17,14 @@ enum RootTabType: String, CaseIterable {
 }
 
 struct RootView: View {
-    let store: Store<AppState, AppAction>
-    @ObservedObject private var viewStore: ViewStore<AppState, AppAction>
+    let store: Store<AppStore.State, AppStore.Action>
+    @ObservedObject private var viewStore: ViewStore<AppStore.State, AppStore.Action>
     
-    init(store: Store<AppState, AppAction>) {
+    init(store: Store<AppStore.State, AppStore.Action>) {
         self.store = store
         viewStore = ViewStore(store)
         
-        print("fmofdkgdf")
-        // 一覧の取得
+        // ユーザー一覧の取得
         viewStore.send(.users(.getContent))
     }
     
@@ -39,7 +38,7 @@ struct RootView: View {
                     UsersMainScreen(
                         store: store.scope(
                             state: \.usersState,
-                            action: AppAction.users
+                            action: AppStore.Action.users
                         )
                     )
                   
@@ -48,7 +47,7 @@ struct RootView: View {
                     SearchMainScreen(
                         store: store.scope(
                             state: \.usersState,
-                            action: AppAction.users
+                            action: AppStore.Action.users
                         )
                     )
                 case .myPage:
