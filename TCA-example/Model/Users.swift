@@ -11,9 +11,9 @@ import ComposableArchitecture
 // MARK: - API models
 
 struct Users: Decodable, Equatable {
-    var totalCount: Int?
-    var incompleteResults: Bool?
-    var items: [User]?
+    var totalCount: Int
+    var incompleteResults: Bool
+    var items: [User]
     
     static let mockUsers = Users(
         totalCount: 2,
@@ -37,17 +37,17 @@ struct Users: Decodable, Equatable {
         case incompleteResults = "incomplete_results"
         case items
     }
+}
+
+struct User: Decodable, Equatable, Identifiable {
+    var id = UUID()
+    var login: String
+    var avatarUrl: String
+    var reposUrl: String
     
-    struct User: Decodable, Equatable, Identifiable {
-        var id = UUID()
-        var login: String?
-        var avatarUrl: String?
-        var reposUrl: String?
-        
-        private enum CodingKeys: String, CodingKey {
-            case login
-            case avatarUrl = "avatar_url"
-            case reposUrl = "repos_url"
-        }
+    private enum CodingKeys: String, CodingKey {
+        case login
+        case avatarUrl = "avatar_url"
+        case reposUrl = "repos_url"
     }
 }
