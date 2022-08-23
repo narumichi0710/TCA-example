@@ -20,14 +20,6 @@ struct RootView: View {
                         // ログイン画面
                         switch viewStore.selectedRootTab {
                         case .users:
-                            // トップ画面
-                            UsersMainScreen(
-                                store: store.scope(
-                                    state: \.usersState,
-                                    action: AppStore.Action.users
-                                )
-                            )
-                        case .search:
                             // 検索画面
                             SearchMainScreen(
                                 store: store.scope(
@@ -35,12 +27,18 @@ struct RootView: View {
                                     action: AppStore.Action.users
                                 )
                             )
-                        case .myPage:
-                            // マイページ
+                        case .search:
                             VStack {
                                 Spacer()
                                 Color.green
-                                Text("マイページ")
+                                Text("sample2")
+                                Spacer()
+                            }
+                        case .myPage:
+                            VStack {
+                                Spacer()
+                                Color.green
+                                Text("sample3")
                                 Spacer()
                             }
                             

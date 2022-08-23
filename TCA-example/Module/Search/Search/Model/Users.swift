@@ -1,15 +1,11 @@
 //
-//  UserStore.swift
-//  TCA-example
-//
-//  Created by Narumichi Kubo on 2022/07/23.
+//  Users.swift
 //
 
 import Foundation
 import ComposableArchitecture
 
-// MARK: - API models
-
+// MARK: - ユーザーAPIモデル
 struct Users: Decodable, Equatable {
     var totalCount: Int
     var incompleteResults: Bool
@@ -22,7 +18,7 @@ struct Users: Decodable, Equatable {
             User(
                 login: "narumichi0710",
                 avatarUrl: "https://avatars.githubusercontent.com/u/65114797?v=4",
-                reposUrl: "https://api.github.com/users/narumichi0710/repos"
+                reposUrl: "htØtps://api.github.com/users/narumichi0710/repos"
             ),
             User(
                 login: "narumichi0710",

@@ -1,8 +1,5 @@
 //
-//  SearchView.swift
-//  TCA-example
-//
-//  Created by Narumichi Kubo on 2022/07/23.
+//  SearchMainScreen.swift
 //
 
 import SwiftUI
@@ -11,41 +8,37 @@ import Combine
 
 
 /// ユーザー検索画面
-struct UsersMainScreen: View {
-    let store: Store<UsersStore.State, UsersStore.Action>
+struct SearchMainScreen: View {
+    let store: Store<SearchStore.State, SearchStore.Action>
     
     var body: some View {
         ZStack {
             WithViewStore(store) { viewStore in
                 // ナビゲーション
-                navigation(viewStore)
+                navigationLink(viewStore)
                 // コンテント
                 content(viewStore)
-                // エラー
-                error
-                
             }
         }
-        
     }
     
     /// ナビゲーション
-    private func navigation(_ viewStore: ViewStore<UsersStore.State, UsersStore.Action>) -> some View {
+    private func navigationLink(_ viewStore: ViewStore<SearchStore.State, SearchStore.Action>) -> some View {
         NavigationLink("", isActive: viewStore.binding(
             get: \.selectedUser.isSelected,
-            send: UsersStore.Action.presentRepositories(nil)
+            send: SearchStore.Action.presentRepositories(nil)
         )){
             RepositoriesMainScreen(
                 selectedUser: viewStore.binding(
                     get: \.selectedUser,
-                    send: UsersStore.Action.presentRepositories(nil)
+                    send: SearchStore.Action.presentRepositories(nil)
                 )
             ).navigationBarHidden(true)
         }
     }
     
     /// コンテント
-    private func content(_ viewStore: ViewStore<UsersStore.State, UsersStore.Action>) -> some View {
+    private func content(_ viewStore: ViewStore<SearchStore.State, SearchStore.Action>) -> some View {
         VStack {
             // ヘッダー
             Text("Github User 絞り込み画面")
@@ -55,7 +48,7 @@ struct UsersMainScreen: View {
             TextField(
                 "user name",
                 text: viewStore.binding(
-                    get: \.filteredWord, send: UsersStore.Action.changedFilterWord
+                    get: \.filteredWord, send: SearchStore.Action.changedFilterWord
                 )
             )
                 .onChange(of: viewStore.filteredWord) { _ in
@@ -86,12 +79,4 @@ struct UsersMainScreen: View {
             }
         }
     }
-    
-    /// エラー
-    private var error: some View {
-        
-        Text("TODO error")
-        
-    }
-    
 }

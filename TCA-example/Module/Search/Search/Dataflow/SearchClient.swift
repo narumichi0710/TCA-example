@@ -1,23 +1,18 @@
 //
-//  APIClient.swift
-//  TCA-example
-//
-//  Created by Narumichi Kubo on 2022/07/24.
+//  SearchClient.swift
 //
 
 import Foundation
 import ComposableArchitecture
 
-// MARK: - API client interface
 
-struct UsersClient {
+struct SearchClient {
     var users: (String) -> Effect<Users, Failure>
 }
 
-// MARK: - Live API implementation
 
-extension UsersClient {
-    static let live =  UsersClient(users: { query in
+extension SearchClient {
+    static let live =  SearchClient(users: { query in
 
         
         var components = URLComponents()

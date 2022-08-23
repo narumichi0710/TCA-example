@@ -1,14 +1,11 @@
 //
 //  AppStore.swift
-//  TCA-example
-//
-//  Created by Narumichi Kubo on 2022/08/12.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-// MARK: アプリ全体で管理するためのStore
+// MARK: アプリコア Store
 enum AppStore {
     struct State: Equatable {
         /// appDeregate State
@@ -16,7 +13,7 @@ enum AppStore {
         /// ルートタブの状態を管理しているState
         var selectedRootTab: RootTabType = .users
         /// ユーザー機能の状態を管理しているState
-        var usersState = UsersStore.State()
+        var usersState = SearchStore.State()
     }
     
     enum Action: Equatable {
@@ -25,12 +22,12 @@ enum AppStore {
         /// ルートタブ変更アクション
         case changedRootTab(RootTabType)
         /// ユーザー機能アクション
-        case users(UsersStore.Action)
+        case users(SearchStore.Action)
     }
     
     struct Environment {
         /// ユーザークライアント
-        let usersClient: UsersClient
+        let usersClient: SearchClient
     }
     
     /// ルートタブタイプ
@@ -61,7 +58,7 @@ enum AppStore {
             action: /Action.appDelegate,
             environment: { _ in .init() }),
         // ユーザー機能Reducer
-        UsersStore.reducer.pullback(
+        SearchStore.reducer.pullback(
             state: \State.usersState,
             action: /Action.users,
             environment: {

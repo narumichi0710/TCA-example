@@ -1,16 +1,12 @@
 //
-//  UsersStore.swift
-//  TCA-example
+//  SearchStore.swift
 //
-//  Created by Narumichi Kubo on 2022/08/12.
-//
-
 import Foundation
 import ComposableArchitecture
 import Combine
 
-// MARK: ユーザー機能 Store
-enum UsersStore {
+// MARK: 検索機能 Store
+enum SearchStore {
     struct State: Equatable {
         /// ユーザー一覧
         var users: Users? = nil

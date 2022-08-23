@@ -15,17 +15,14 @@
 		52528E40288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E3F288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift */; };
 		52528E53288BFE1E00C7472E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52528E52288BFE1E00C7472E /* ComposableArchitecture */; };
 		52528E56288C024F00C7472E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E55288C024F00C7472E /* Users.swift */; };
-		52528E58288D53F700C7472E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E57288D53F700C7472E /* APIClient.swift */; };
+		52528E58288D53F700C7472E /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E57288D53F700C7472E /* SearchClient.swift */; };
 		528C737828A3ED6E00B8E377 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C737728A3ED6E00B8E377 /* UserCell.swift */; };
-		528C737C28A4B9BB00B8E377 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C737B28A4B9BB00B8E377 /* Repositories.swift */; };
-		528C737E28A4CAEF00B8E377 /* UsersMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C737D28A4CAEF00B8E377 /* UsersMainScreen.swift */; };
-		528C738328A524B400B8E377 /* AlertScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C738228A524B400B8E377 /* AlertScreen.swift */; };
-		528C738828A63E3000B8E377 /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C738728A63E3000B8E377 /* UsersStore.swift */; };
+		528C737E28A4CAEF00B8E377 /* SearchMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C737D28A4CAEF00B8E377 /* SearchMainScreen.swift */; };
+		528C738828A63E3000B8E377 /* SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C738728A63E3000B8E377 /* SearchStore.swift */; };
 		528C738D28A6401500B8E377 /* AppDelegateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C738C28A6401500B8E377 /* AppDelegateStore.swift */; };
 		528C738F28A6405400B8E377 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C738E28A6405400B8E377 /* AppStore.swift */; };
 		528C739128A644B300B8E377 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C739028A644B300B8E377 /* RootView.swift */; };
 		528C739E28A650E300B8E377 /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C739D28A650E300B8E377 /* LoginMainView.swift */; };
-		528C73A328A7936800B8E377 /* SearchMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73A228A7936800B8E377 /* SearchMainScreen.swift */; };
 		528C73A928A7B80B00B8E377 /* RepositoriesMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73A828A7B80B00B8E377 /* RepositoriesMainScreen.swift */; };
 		528C73AF28A7C1E400B8E377 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */; };
 /* End PBXBuildFile section */
@@ -58,17 +55,14 @@
 		52528E3D288BF2F400C7472E /* TCA_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_exampleUITests.swift; sourceTree = "<group>"; };
 		52528E3F288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		52528E55288C024F00C7472E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		52528E57288D53F700C7472E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		52528E57288D53F700C7472E /* SearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
 		528C737728A3ED6E00B8E377 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		528C737B28A4B9BB00B8E377 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
-		528C737D28A4CAEF00B8E377 /* UsersMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMainScreen.swift; sourceTree = "<group>"; };
-		528C738228A524B400B8E377 /* AlertScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertScreen.swift; sourceTree = "<group>"; };
-		528C738728A63E3000B8E377 /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
+		528C737D28A4CAEF00B8E377 /* SearchMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainScreen.swift; sourceTree = "<group>"; };
+		528C738728A63E3000B8E377 /* SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStore.swift; sourceTree = "<group>"; };
 		528C738C28A6401500B8E377 /* AppDelegateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateStore.swift; sourceTree = "<group>"; };
 		528C738E28A6405400B8E377 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		528C739028A644B300B8E377 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		528C739D28A650E300B8E377 /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
-		528C73A228A7936800B8E377 /* SearchMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainScreen.swift; sourceTree = "<group>"; };
 		528C73A828A7B80B00B8E377 /* RepositoriesMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesMainScreen.swift; sourceTree = "<group>"; };
 		528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +118,9 @@
 			children = (
 				528C738428A5263D00B8E377 /* App */,
 				528C739228A644CF00B8E377 /* DataFlow */,
-				52528E50288BFCDE00C7472E /* View */,
-				52528E54288C00F900C7472E /* Model */,
+				52741BFB28B4FBF60077CFBA /* Module */,
+				528C73AD28A7C1AB00B8E377 /* Util */,
+				52528E28288BF2F400C7472E /* Preview Content */,
 			);
 			path = "TCA-example";
 			sourceTree = "<group>";
@@ -155,32 +150,45 @@
 			path = "TCA-exampleUITests";
 			sourceTree = "<group>";
 		};
-		52528E50288BFCDE00C7472E /* View */ = {
+		52741BFB28B4FBF60077CFBA /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				528C73AD28A7C1AB00B8E377 /* Utils */,
-				528C73A728A7B7E400B8E377 /* Repositories */,
-				528C73A128A7935000B8E377 /* Search */,
 				528C739C28A650CB00B8E377 /* Auth */,
-				528C738528A63DF800B8E377 /* Users */,
+				528C73A728A7B7E400B8E377 /* Repositories */,
+				528C738528A63DF800B8E377 /* Search */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		52741BFD28B4FCAF0077CFBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				528C737628A3ED5200B8E377 /* Component */,
+				528C737D28A4CAEF00B8E377 /* SearchMainScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		52528E54288C00F900C7472E /* Model */ = {
+		52741BFE28B4FCBE0077CFBA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				52528E55288C024F00C7472E /* Users.swift */,
-				52528E57288D53F700C7472E /* APIClient.swift */,
-				528C737B28A4B9BB00B8E377 /* Repositories.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52741BFF28B4FCC70077CFBA /* Dataflow */ = {
+			isa = PBXGroup;
+			children = (
+				528C738728A63E3000B8E377 /* SearchStore.swift */,
+				52528E57288D53F700C7472E /* SearchClient.swift */,
+			);
+			path = Dataflow;
 			sourceTree = "<group>";
 		};
 		528C737628A3ED5200B8E377 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				528C738228A524B400B8E377 /* AlertScreen.swift */,
 				528C737728A3ED6E00B8E377 /* UserCell.swift */,
 			);
 			path = Component;
@@ -189,7 +197,6 @@
 		528C738428A5263D00B8E377 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				52528E28288BF2F400C7472E /* Preview Content */,
 				52528E26288BF2F400C7472E /* Assets.xcassets */,
 				52528E22288BF2F200C7472E /* TCA_exampleApp.swift */,
 				528C739028A644B300B8E377 /* RootView.swift */,
@@ -197,13 +204,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		528C738528A63DF800B8E377 /* Users */ = {
+		528C738528A63DF800B8E377 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				528C737628A3ED5200B8E377 /* Component */,
-				528C737D28A4CAEF00B8E377 /* UsersMainScreen.swift */,
+				52741BFF28B4FCC70077CFBA /* Dataflow */,
+				52741BFE28B4FCBE0077CFBA /* Model */,
+				52741BFD28B4FCAF0077CFBA /* View */,
 			);
-			path = Users;
+			name = Search;
+			path = Search/Search;
 			sourceTree = "<group>";
 		};
 		528C739228A644CF00B8E377 /* DataFlow */ = {
@@ -211,7 +220,6 @@
 			children = (
 				528C738C28A6401500B8E377 /* AppDelegateStore.swift */,
 				528C738E28A6405400B8E377 /* AppStore.swift */,
-				528C738728A63E3000B8E377 /* UsersStore.swift */,
 			);
 			path = DataFlow;
 			sourceTree = "<group>";
@@ -224,14 +232,6 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		528C73A128A7935000B8E377 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				528C73A228A7936800B8E377 /* SearchMainScreen.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		528C73A728A7B7E400B8E377 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,12 +240,12 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		528C73AD28A7C1AB00B8E377 /* Utils */ = {
+		528C73AD28A7C1AB00B8E377 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				528C73AE28A7C1E400B8E377 /* LoadingScreen.swift */,
 			);
-			path = Utils;
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,21 +384,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528C738828A63E3000B8E377 /* UsersStore.swift in Sources */,
+				528C738828A63E3000B8E377 /* SearchStore.swift in Sources */,
 				528C739E28A650E300B8E377 /* LoginMainView.swift in Sources */,
-				528C738328A524B400B8E377 /* AlertScreen.swift in Sources */,
 				52528E56288C024F00C7472E /* Users.swift in Sources */,
 				528C739128A644B300B8E377 /* RootView.swift in Sources */,
 				528C738D28A6401500B8E377 /* AppDelegateStore.swift in Sources */,
-				528C737E28A4CAEF00B8E377 /* UsersMainScreen.swift in Sources */,
+				528C737E28A4CAEF00B8E377 /* SearchMainScreen.swift in Sources */,
 				528C738F28A6405400B8E377 /* AppStore.swift in Sources */,
 				528C73A928A7B80B00B8E377 /* RepositoriesMainScreen.swift in Sources */,
 				528C737828A3ED6E00B8E377 /* UserCell.swift in Sources */,
-				528C737C28A4B9BB00B8E377 /* Repositories.swift in Sources */,
-				528C73A328A7936800B8E377 /* SearchMainScreen.swift in Sources */,
 				528C73AF28A7C1E400B8E377 /* LoadingScreen.swift in Sources */,
 				52528E23288BF2F200C7472E /* TCA_exampleApp.swift in Sources */,
-				52528E58288D53F700C7472E /* APIClient.swift in Sources */,
+				52528E58288D53F700C7472E /* SearchClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +555,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TCA-example/App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TCA-example/Preview Content\"";
 				DEVELOPMENT_TEAM = QP448RJ447;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -587,7 +584,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TCA-example/App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TCA-example/Preview Content\"";
 				DEVELOPMENT_TEAM = QP448RJ447;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
