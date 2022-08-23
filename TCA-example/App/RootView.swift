@@ -23,7 +23,7 @@ struct RootView: View {
                             // 検索画面
                             SearchMainScreen(
                                 store: store.scope(
-                                    state: \.usersState,
+                                    state: \.searchState,
                                     action: AppStore.Action.users
                                 )
                             )

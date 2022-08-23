@@ -4,35 +4,34 @@
 
 import Foundation
 import ComposableArchitecture
-
+import Combine
 
 struct SearchClient {
-    var users: (String) -> Effect<Users, Failure>
+    var users: (SearchRequest) -> Effect<SearchUserResponse.Users, APIError>
 }
-
 
 extension SearchClient {
-    static let live =  SearchClient(users: { query in
-
-        
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.github.com"
-        components.path = "/search/users"
-        components.queryItems = [URLQueryItem(name: "q", value: query)]
-        
-        return URLSession.shared.dataTaskPublisher(for: components.url!)
-          .map { data, _ in data }
-          .decode(type: Users.self, decoder: JSONDecoder())
-          .mapError { _ in Failure() }
-          .eraseToEffect()
+    static let live = SearchClient(users: {
+        $0.publisher
+            .receive(on: $0.scheduler)
+            .eraseToEffect()
     })
-   
 }
 
 
-// MARK: - API Error localizedDescription
-
-struct Failure: Error, Equatable {
-    // TODO:
+struct SearchRequest: APIRequest {
+    /// リクエスト
+    let request: SearchUserRequest
+    /// ボディ
+    typealias Body = SearchUserRequest
+    /// レスポンス
+    typealias Response = SearchUserResponse.Users
+    /// メソッド
+    var method: HTTPMethodType { .get }
+    /// パス
+    var path: String { "/search/users" }
+    /// パブリッシャー
+    var publisher: AnyPublisher<SearchUserResponse.Users, APIError> {
+        request(body: request)
+    }
 }

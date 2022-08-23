@@ -48,12 +48,12 @@ struct SearchMainScreen: View {
             TextField(
                 "user name",
                 text: viewStore.binding(
-                    get: \.filteredWord, send: SearchStore.Action.changedFilterWord
+                    get: \.searchdWord, send: SearchStore.Action.changedSearchWord
                 )
             )
-                .onChange(of: viewStore.filteredWord) { _ in
+                .onChange(of: viewStore.searchdWord) { _ in
                     // searchQuery変更時にStoreに対してActionを発行. 副作用を発生させる.
-                    viewStore.send(.changedFilterWord(viewStore.filteredWord))
+                    viewStore.send(.changedSearchWord(viewStore.searchdWord))
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.asciiCapable)
@@ -62,7 +62,7 @@ struct SearchMainScreen: View {
             Spacer()
             
             // 検索結果リスト
-            if let items = viewStore.filteredUsers {
+            if let items = viewStore.users?.items {
                 ScrollView {
                     VStack {
                         ForEach(items) { user in

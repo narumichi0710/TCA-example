@@ -12,8 +12,8 @@ enum AppStore {
         var appDelegateState = AppDelegateStore.State()
         /// ルートタブの状態を管理しているState
         var selectedRootTab: RootTabType = .users
-        /// ユーザー機能の状態を管理しているState
-        var usersState = SearchStore.State()
+        /// 検索機能の状態を管理しているState
+        var searchState = SearchStore.State()
     }
     
     enum Action: Equatable {
@@ -21,13 +21,13 @@ enum AppStore {
         case appDelegate(AppDelegateStore.Action)
         /// ルートタブ変更アクション
         case changedRootTab(RootTabType)
-        /// ユーザー機能アクション
+        /// 検索機能アクション
         case users(SearchStore.Action)
     }
     
     struct Environment {
-        /// ユーザークライアント
-        let usersClient: SearchClient
+        /// 検索 Environment
+        let searchEnv: SearchStore.Environment
     }
     
     /// ルートタブタイプ
@@ -57,12 +57,12 @@ enum AppStore {
             state: \State.appDelegateState,
             action: /Action.appDelegate,
             environment: { _ in .init() }),
-        // ユーザー機能Reducer
+        // 検索機能Reducer
         SearchStore.reducer.pullback(
-            state: \State.usersState,
+            state: \State.searchState,
             action: /Action.users,
             environment: {
-                .init(usersClient: $0.usersClient)
+                .init(searchClient: $0.searchEnv.searchClient)
             }
         )
     )

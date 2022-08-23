@@ -9,7 +9,7 @@ import SwiftUI
 
 /// ユーザー検索結果セル
 struct UserCell: View {
-    let user: User
+    let user: SearchUserResponse.User
     
     var body: some View {
         HStack {

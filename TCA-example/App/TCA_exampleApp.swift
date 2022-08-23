@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialState: AppStore.State(),
         reducer: AppStore.reducer,
         environment: AppStore.Environment(
-            usersClient: .live
+            searchEnv: .init(searchClient: .live)
         )
     )
     

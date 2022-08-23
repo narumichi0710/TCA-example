@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct RepositoriesMainScreen: View {
     /// 選択中のユーザー
-    @Binding var selectedUser: Bindable<User>
+    @Binding var selectedUser: Bindable<SearchUserResponse.User>
     
     var body: some View {
         VStack{
@@ -24,7 +24,7 @@ struct RepositoriesMainScreen: View {
             // ヘッダー
             HStack {
                 Button("戻る") {
-                    selectedUser = Bindable<User>(nil)
+                    selectedUser = Bindable<SearchUserResponse.User>(nil)
                 }
                 Spacer()
             }
