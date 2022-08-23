@@ -15,7 +15,7 @@ enum SearchStore {
         /// 検索ワード
         var filteredWord: String = ""
         /// 選択中のユーザー
-        var selectedUser: Selection = Selection<User>(nil)
+        var selectedUser: Bindable = Bindable<User>(nil)
     }
     
     enum Action: Equatable {
@@ -82,29 +82,11 @@ enum SearchStore {
         case .presentRepositories(let selectedUser):
             // レポジトリ画面遷移処理.
             if selectedUser == nil {
-                state.selectedUser = Selection<User>(nil)
+                state.selectedUser = Bindable<User>(nil)
             } else {
-                state.selectedUser = Selection<User>(selectedUser)
+                state.selectedUser = Bindable<User>(selectedUser)
             }
             return .none
         }
-    }
-}
-
-
-/// ナビゲーションの引数として利用するための構造体
-struct Selection<T>: Equatable {
-    /// isActiveフラグのBinding先として定義
-    var isSelected: Bool = false
-    /// 選択中のアイテム
-    var selectdItem: T?
-    
-    init(_ item: T?) {
-        isSelected = item != nil
-        selectdItem = item
-    }
-    
-    static func == (lhs: Selection<T>, rhs: Selection<T>) -> Bool {
-        return lhs.isSelected == rhs.isSelected
     }
 }

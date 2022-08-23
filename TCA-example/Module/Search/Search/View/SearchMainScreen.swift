@@ -25,7 +25,7 @@ struct SearchMainScreen: View {
     /// ナビゲーション
     private func navigationLink(_ viewStore: ViewStore<SearchStore.State, SearchStore.Action>) -> some View {
         NavigationLink("", isActive: viewStore.binding(
-            get: \.selectedUser.isSelected,
+            get: \.selectedUser.flag,
             send: SearchStore.Action.presentRepositories(nil)
         )){
             RepositoriesMainScreen(
