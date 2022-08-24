@@ -10,7 +10,7 @@
 		52528E23288BF2F200C7472E /* TCA_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E22288BF2F200C7472E /* TCA_exampleApp.swift */; };
 		52528E27288BF2F400C7472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52528E26288BF2F400C7472E /* Assets.xcassets */; };
 		52528E2A288BF2F400C7472E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52528E29288BF2F400C7472E /* Preview Assets.xcassets */; };
-		52528E34288BF2F400C7472E /* TCA_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E33288BF2F400C7472E /* TCA_exampleTests.swift */; };
+		52528E34288BF2F400C7472E /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E33288BF2F400C7472E /* SearchTests.swift */; };
 		52528E3E288BF2F400C7472E /* TCA_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E3D288BF2F400C7472E /* TCA_exampleUITests.swift */; };
 		52528E40288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52528E3F288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift */; };
 		52528E53288BFE1E00C7472E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52528E52288BFE1E00C7472E /* ComposableArchitecture */; };
@@ -54,7 +54,7 @@
 		52528E26288BF2F400C7472E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52528E29288BF2F400C7472E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52528E2F288BF2F400C7472E /* TCA-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52528E33288BF2F400C7472E /* TCA_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_exampleTests.swift; sourceTree = "<group>"; };
+		52528E33288BF2F400C7472E /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		52528E39288BF2F400C7472E /* TCA-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCA-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52528E3D288BF2F400C7472E /* TCA_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_exampleUITests.swift; sourceTree = "<group>"; };
 		52528E3F288BF2F400C7472E /* TCA_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -138,6 +138,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		521B776E28B5BE7300365A1A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				52528E33288BF2F400C7472E /* SearchTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		52528E16288BF2F200C7472E = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +189,7 @@
 		52528E32288BF2F400C7472E /* TCA-exampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				52528E33288BF2F400C7472E /* TCA_exampleTests.swift */,
+				521B776E28B5BE7300365A1A /* Search */,
 			);
 			path = "TCA-exampleTests";
 			sourceTree = "<group>";
@@ -434,7 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52528E34288BF2F400C7472E /* TCA_exampleTests.swift in Sources */,
+				52528E34288BF2F400C7472E /* SearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

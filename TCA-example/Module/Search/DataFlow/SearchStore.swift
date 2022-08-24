@@ -18,6 +18,8 @@ enum SearchStore {
         var searchdWord: String = ""
         /// 選択中のユーザー
         var selectedUser: Bindable = Bindable<SearchUserResponse.User>(nil)
+        /// エラーステータス
+        var errorStatus: Bindable<String> = Bindable(nil)
     }
     
     enum Action: Equatable {
@@ -46,8 +48,7 @@ enum SearchStore {
                 return .none
 
             case .failure(let error):
-                // ユーザー一覧取得 失敗処理
-                // TODO: アラート表示
+                state.errorStatus = Bindable(error.localize)
                 return .none
             }
         case .getContent:
