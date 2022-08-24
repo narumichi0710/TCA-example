@@ -101,6 +101,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521B776A28B5BD9900365A1A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				521B776D28B5BDC400365A1A /* View */,
+				521B776C28B5BDB300365A1A /* Model */,
+				521B776B28B5BDA300365A1A /* DataFlow */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		521B776B28B5BDA300365A1A /* DataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				52528E57288D53F700C7472E /* SearchClient.swift */,
+				528C738728A63E3000B8E377 /* SearchStore.swift */,
+			);
+			path = DataFlow;
+			sourceTree = "<group>";
+		};
+		521B776C28B5BDB300365A1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52528E55288C024F00C7472E /* SearchUserResponse.swift */,
+				52741C0A28B50D420077CFBA /* SearchUserRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		521B776D28B5BDC400365A1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				528C737D28A4CAEF00B8E377 /* SearchMainScreen.swift */,
+				528C737628A3ED5200B8E377 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		52528E16288BF2F200C7472E = {
 			isa = PBXGroup;
 			children = (
@@ -161,40 +198,13 @@
 		52741BFB28B4FBF60077CFBA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				521B776A28B5BD9900365A1A /* Search */,
 				52741C0328B4FF0A0077CFBA /* ViewExtension */,
 				52741C0028B4FEA30077CFBA /* API */,
 				528C739C28A650CB00B8E377 /* Auth */,
 				528C73A728A7B7E400B8E377 /* Repositories */,
-				528C738528A63DF800B8E377 /* Search */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		52741BFD28B4FCAF0077CFBA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				528C737628A3ED5200B8E377 /* Component */,
-				528C737D28A4CAEF00B8E377 /* SearchMainScreen.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		52741BFE28B4FCBE0077CFBA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				52528E55288C024F00C7472E /* SearchUserResponse.swift */,
-				52741C0A28B50D420077CFBA /* SearchUserRequest.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		52741BFF28B4FCC70077CFBA /* Dataflow */ = {
-			isa = PBXGroup;
-			children = (
-				528C738728A63E3000B8E377 /* SearchStore.swift */,
-				52528E57288D53F700C7472E /* SearchClient.swift */,
-			);
-			path = Dataflow;
 			sourceTree = "<group>";
 		};
 		52741C0028B4FEA30077CFBA /* API */ = {
@@ -230,17 +240,6 @@
 				528C739028A644B300B8E377 /* RootView.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		528C738528A63DF800B8E377 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				52741BFF28B4FCC70077CFBA /* Dataflow */,
-				52741BFE28B4FCBE0077CFBA /* Model */,
-				52741BFD28B4FCAF0077CFBA /* View */,
-			);
-			name = Search;
-			path = Search/Search;
 			sourceTree = "<group>";
 		};
 		528C739228A644CF00B8E377 /* DataFlow */ = {
