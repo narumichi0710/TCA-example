@@ -1,10 +1,11 @@
-name: Swift
+name: Test
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,7 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
+      
     - name: Run tests
-      run: swift test -v
+      run: xcodebuild test -project TCA-example.xcodeproj -scheme TCA-example -resultBundlePath TestResults -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13"
+
+    - uses: kishikawakatsumi/xcresulttool@v1.5.0
+      with:
+        path: TestResults.xcresult
+      if: success() || failure()
